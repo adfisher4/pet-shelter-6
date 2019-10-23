@@ -1,0 +1,21 @@
+<div class='m-3'>
+<h3>These pets are looking for a home</h3>
+
+<a [routerLink]="['/pets/new']" routerLinkActive="router-link-active">Add a pet to the shelter</a>
+<br>
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of allPets">
+            <td>{{p.name}}</td>
+            <td>{{p.type}}</td>
+            <td>   <button [routerLink]="[p._id]" routerLinkActive="router-link-active"  class='btn btn-warning m-1'>Details</button> <button [routerLink]="[p._id, 'edit']" routerLinkActive="router-link-active"  class='btn btn-warning m-1'>Edit</button></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>

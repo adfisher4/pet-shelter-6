@@ -1,0 +1,29 @@
+<div class='m-3'>
+    <h3>Know of a pet needing a home?</h3>
+
+    <br>
+    <div class='border border-dark rounded p-3'>
+        <form (submit)="addPet()" class='form-group'>
+            <label for="">Pet name:</label>
+            <input type="text" name="name" [(ngModel)]="newPet.name" class="form-control"><br>
+            <label for="">Pet type:</label>
+            <input type="text" name="petType" [(ngModel)]="newPet.type" class="form-control"><br>
+            <label for="">Description:</label>
+            <input type="text" name="description" [(ngModel)]="newPet.description" class="form-control"><br>
+            <label for="">Skills:</label><br>
+            <div class='ml-4'>
+            <label for="">Skill 1:</label>
+            <input type="text" name="skill1" [(ngModel)]="newPet.skill1" class="form-control"><br>
+            <label for="">Skill 2:</label>
+            <input type="text" name="skill2" [(ngModel)]="newPet.skill2" class="form-control"><br>
+            <label for="">Skill 3:</label>
+            <input type="text" name="skill3" [(ngModel)]="newPet.skill3" class="form-control">
+            <input type="submit" value="Add Pet" class="btn btn-primary m-2">
+            <button [routerLink]="['/']" class="btn btn-warning m-2">Cancel</button>
+        </div>
+        </form>
+        <div *ngFor="let err of errors">
+            <p class='text-danger'>{{ err }}</p>
+        </div>
+    </div>
+</div>

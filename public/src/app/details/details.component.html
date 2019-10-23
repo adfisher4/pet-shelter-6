@@ -1,0 +1,27 @@
+<div *ngIf='onePet'>
+<a [routerLink]="['/pets']" routerLinkActive="router-link-active" class="m-3">Home</a>
+<div class='m-3'>
+    <h3>Details about {{onePet.name}}</h3><br>
+    <h4>Pet type: {{onePet.type}}</h4><br>
+    <h4>Description: {{onePet.description}}</h4><br>
+    <div class='row' *ngIf='onePet.skill1'>
+        <div class='col-3'>
+            <h4>Skills:</h4>
+        </div>
+        <ul class='col-5'>
+            <li><h5>{{onePet.skill1}}</h5></li>
+            <li *ngIf='onePet.skill2'><h5>{{onePet.skill2}}</h5></li>
+            <li *ngIf='onePet.skill3'><h5>{{onePet.skill3}}</h5></li>
+        </ul>
+    </div>
+    <h4>Likes: {{onePet.likes}}</h4>
+    <div class='row mt-3'>
+    <div class='ml-3 col-2'>
+            <button class='btn btn-success' (click)=adoptPet()>Adopt {{onePet.name}}!!</button>
+        </div>
+        <div class='col-2' *ngIf="notLiked">
+                <button class='btn btn-primary' (click)=likePet()>Like this pet!</button>
+        </div>
+</div>
+</div>
+</div>
